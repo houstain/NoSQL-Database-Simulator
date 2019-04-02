@@ -1,0 +1,42 @@
+//Diaconescu Florin, 322 CB
+/*Mentionez ca local primesc 120 de puncte, tema fiind trimisa cu o zi intarziere,
+iar vmchecker-ul este posibil sa nu functioneze la incarcarea arhivei. Am incarcat
+arhiva si pe site-ul de curs.*/
+
+------------------------------LOST IN NOSQL------------------------------------
+
+Tema presupune modelarea unei baze de date, de tip NoSQL, distribuita pe mai multe
+noduri, suportand un limbaj simplu de interogare.
+
+In implementarea temei, am ales sa modelez, pentru inceput, o clasa Database, in
+cadrul careia sa fie tratate comenzile parsate in clasa principala a programului.
+Aceasta clasa este caracterizata de numele acestuia, numarul de noduri si 
+capacitatea maximaa a unui nod ce va face parte din aceasta baza de date. De asemenea,
+voi avea nevoie si de o lista de noduri (astfel observand necesitatea modelarii unui
+nod printr-o clasa dedicata), dar si a unei liste de entitati.
+
+O entitate va avea mai multe caracteristici ce pot fi configurare, respectiv un factor
+de replicare, ce va fi mai mic sau egal decat numarul de noduri, ce va specifica in
+cate noduri va trebui inserata fiecare instanta ce va avea atributele entitatii. 
+Pentru o accesare facila a numelui atributelor, am creat un alt ArrayList pentru
+stocarea acestora, putand fi iterat la cerere.
+
+Un nod are un numar ce il caracterizeaza, precum si o capacitate maxima a nodurilor
+ce pot fi inserate. In cazul in care nu mai este loc pentru inserare, se va trece
+la urmatorul nod din lista de noduri, sau in cazul in care toate sunt pline, va fi
+creat un nou nod cu capacitatea maxima egala cu a celorlaltor noduri din baza de
+date, adaugat la final in lista respectiva.
+
+O instanta a unei entitati va avea un nume si o cheie primara (primul atribut al
+acesteia) corespunzatoare, fiind modelata printr-o clasa ce implementeaza Comparable,
+pentru a putea compara doua instante in functie de timeStamp-ul la care au fost adaugate
+in sistem sau la care au fost updatate.
+
+Pentru modelarea atributelor am considerat facila crearea unei clase abstracte, ce va
+urma sa fie implementata de clasele StringAttribute, IntAttribute sau FloatAttribute,
+pentru o returnare usoara a valorii sau a tipului atributului. Aceste clase sunt
+relativ similare, cu deosebirea aparand in cadrul atributelor de tip float, in care este
+nevoie de un format special de afisare (DecimalFormat = #.##).
+
+Functionalitatea functiilor este prezentata mai pe larg in comentariile aferente claselor,
+mai precis in javadoc-ul generat. 
