@@ -1,14 +1,9 @@
-//Diaconescu Florin, 322 CB
-/*Mentionez ca local primesc 120 de puncte, tema fiind trimisa cu o zi intarziere,
-iar vmchecker-ul este posibil sa nu functioneze la incarcarea arhivei. Am incarcat
-arhiva si pe site-ul de curs.*/
-
 ------------------------------LOST IN NOSQL------------------------------------
 
-Tema presupune modelarea unei baze de date, de tip NoSQL, distribuita pe mai multe
+Proiectul presupune modelarea unei baze de date, de tip NoSQL, distribuita pe mai multe
 noduri, suportand un limbaj simplu de interogare.
 
-In implementarea temei, am ales sa modelez, pentru inceput, o clasa Database, in
+In implementarea proiectului, am ales sa modelez, pentru inceput, o clasa Database, in
 cadrul careia sa fie tratate comenzile parsate in clasa principala a programului.
 Aceasta clasa este caracterizata de numele acestuia, numarul de noduri si 
 capacitatea maximaa a unui nod ce va face parte din aceasta baza de date. De asemenea,
